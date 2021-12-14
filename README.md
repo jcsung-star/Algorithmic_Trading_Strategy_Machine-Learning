@@ -16,12 +16,13 @@ Columbia FinTech Bootcamp Assignment - Module 14
 * [Requirements](#requirements)
 * [Data](#data)
 * [Visualization](#visualization)
-* [License](#license)
 * [Evaluation Report](#evaluation-report)
+* [License](#license)
 
 ---
 
-## Overview
+## Overview [Table of Contents](#table-of-contents)
+
 
 The program was designed to improve the existing algorithmic trading systems and maintain the firm’s competitive advantage in the market. In order to enhance the existing trading signals with machine learning algorithms that can adapt to new data, the following was accomplished...
 
@@ -60,15 +61,20 @@ The data used in this neural network model was from derived from a CSV file call
 
 ## Visualization
 
-Cumulative return plot that shows the actual returns vs. the strategy returns. Baseline against tuning the trading algorithm.
-![cumulative_return_plot](Images/cum_ret_act_strat_ret.PNG)
+Cumulative return plot that shows the actual returns vs. the strategy returns. Baseline against tuning the trading algorithm. Orignial window was 3 months.
+![cumulative_return_plot_3_mo](Images/cum_ret_plot_act_strat_ret_3_mo.PNG)
+Increase trading window to 6 months
+![cumulative_return_plot_6_mo](Images/cum_ret_plot_act_strat_ret_6_mo.PNG) 
+Decrease trading window to 2 months
+![cumulative_return_plot_2_mo](Images/cum_ret_plot_act_strat_ret_2_mo.PNG)
+
+
+---
+
+## Evaluation Report
 
 ---
 
 ## License
 
 MIT
-
-## Evaluation Report
-
-
