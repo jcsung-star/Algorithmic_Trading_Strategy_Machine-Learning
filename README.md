@@ -128,8 +128,9 @@ Tuned trading algorithm
 New Model
 ![adaboost_classifier](Images/adaboost_classifier.PNG)
 
-This new model outperformed the tuned trading algorithm. Remember that step 2, by increasing the long window to 200 days, the model was not stable. The tuning made the model had unattractive returns.
-Increase SMA long window to 200 days
+The new model clearly outperformed the tuned trading algorithm. By increasing the long window to 200 days, the model was not stable. The returns for the tuned trading algorithm were unattractive.
+
+In summary , training the algorithm and increasing the training window to 6 months or importing the AdaBoost Classifier gave similar and best returns. 
 
 ---
 
