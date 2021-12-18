@@ -60,14 +60,6 @@ The data used in this neural network model was from derived from a CSV file call
 
 ## Evaluation Report
 
-The precision for the -1.0 declined but the recall improved from .04 to .44. The precision for 1.0 improved for .56 to .92 while the recall declined significantly from .96 to .56  
-
-![svm_testing_report](Images/svm_testing_report.PNG)
-
-![svm_testing_report_6_mo](Images/svm_testing_report_6_mo.PNG)
-
-![svm_testing_report_45_day](Images/svm_testing_report_45_day.PNG)
-
 
 ### Step 1: Tune the training algorithm by adjusting the size of the training dataset. 
 
@@ -75,14 +67,18 @@ To do so, slice your data into different periods. Rerun the notebook with the up
 
 Baseline: 3 month window
 ![cumulative_return_plot_3_mo](Images/cum_ret_plot_act_strat_ret_3_mo.PNG)
+![svm_testing_report](Images/svm_testing_report.PNG)
 
 Increase trading window to 6 months
 ![cumulative_return_plot_6_mo](Images/cum_ret_plot_act_strat_ret_6_mo.PNG) 
+![svm_testing_report_6_mo](Images/svm_testing_report_6_mo.PNG)
 
 Decrease trading window to 45 days
 ![cumulative_return_plot_45_day](Images/cum_ret_plot_act_strat_ret_45_day.PNG)
+![svm_testing_report_45_day](Images/svm_testing_report_45_day.PNG)
 
-Answer the following question: What impact resulted from increasing or decreasing the training window? By increasing or decreasing the training window, the strategy results continued to outperform the actual results; however, the original 3 months displayed the best overall performance of the three scenarios from a standpoint of the strategy returns outperforming the actual returns throughout the majority of the time evaluated. However, the 6 month period displayed the best overall return of the strategy returns despite the actual returns outperforming the strategy returns for a significant portion of the time evaluated.
+
+Answer the following question: What impact resulted from increasing or decreasing the training window? By increasing or decreasing the training window, the strategy results continued to outperform the actual results in each of the three instances; however, the original 3 months displayed the best overall performance of the three scenarios from a standpoint of the strategy returns outperforming the actual returns throughout the majority of the time evaluated. The 6 month period displayed the best overall return of the strategy returns despite the actual returns outperforming the strategy returns for a significant portion of the time evaluated. When reviewing the testing report, the delta in training window did not show material chainge in accuracy, precision or recall.
 
 ### Step 2: Tune the trading algorithm by adjusting the SMA input features. 
 
@@ -94,12 +90,16 @@ Baseline: Short Window = 4 | Long Window = 100
 Increase SMA long window to 200 days
 ![sma_change_200](Images/sma_change_200.PNG)
 
-Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows? When the long window was increased from 100 and 200 days with the training window remaining contant at three months, the results were extremely volitile. You saw constant change on one outperforming the other. 
-
+Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows? When the long window was increased from 100 and 200 days with the training window remaining contant at three months, the results were extremely volitile. There was constant change of one outperforming the other. You also saw a significant inverse relationahip between actual returns and strategy returns with the strategy returns underforming significantly. 
 
 ### Step 3: Choose the set of parameters that best improved the trading algorithm returns. 
 
-Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your `README.md` file. Based on the visuals, the best set of parameters was the original SMA window and training windows. 
+Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your `README.md` file. 
+
+Increase trading window to 6 months
+![cumulative_return_plot_6_mo](Images/cum_ret_plot_act_strat_ret_6_mo.PNG) 
+
+The best set of parameters was reflected in the 6 month training windows by increasing the training dataset. Keeping the short window at 4 and long window at 100 seemed to imptove the algorithm returns   
 
 
 ### Step 3: Backtest the new model to evaluate its performance. 
@@ -107,8 +107,29 @@ Save a PNG image of the cumulative product of the actual returns vs. the strateg
 Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your `README.md` file. 
 
 Answer the following questions: 
-Did this new model perform better or worse than the provided baseline model? The 
-Did this new model perform better or worse than your tuned trading algorithm? 
+
+Did this new model perform better or worse than the provided baseline model?
+
+Baseline Model
+![cumulative_return_plot_3_mo](Images/cum_ret_plot_act_strat_ret_3_mo.PNG)
+![svm_testing_report](Images/svm_testing_report.PNG)
+
+New Model
+![adaboost_classifier](Images/adaboost_classifier.PNG)
+![testing_report](Images/testing_report.PNG)
+
+By importing the AdaBoost Classifier, the strategy returns in the new model did outperform the strategy results from the base model. Although there are instances where the actual returns outperformed the strategy results, the final returns were better in the new model. 
+
+Did this new model perform better or worse than your tuned trading algorithm?
+
+Tuned trading algorithm
+![sma_change_200](Images/sma_change_200.PNG)
+
+New Model
+![adaboost_classifier](Images/adaboost_classifier.PNG)
+
+This new model outperformed the tuned trading algorithm. Remember that step 2, by increasing the long window to 200 days, the model was not stable. The tuning made the model had unattractive returns.
+Increase SMA long window to 200 days
 
 ---
 
